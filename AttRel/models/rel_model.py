@@ -23,7 +23,7 @@ class AttModel(nn.Module):
     def get_encoded_text(self, token_ids, mask):
         # [batch_size, seq_len, bert_dim(768)]
         encoded_text = self.bert_encoder(token_ids, attention_mask=mask)[0]
-        #print("😊",encoded_text.shape)
+       
         #print(encoded_text.shape)
         with open("data/NYT/rel.json", 'r') as f:
             rel = json.load(f)
